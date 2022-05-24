@@ -1,0 +1,901 @@
+/* ---------------------- Section top-inner ---------------------- */
+section.top-inner {					
+	color: #fff;
+    background: var(--main-light-color);
+	text-align: center;
+    padding-bottom: 40px;
+    padding-top: 90px;
+
+	.section-inner {
+		z-index: 2;
+	}
+	.title {
+		@include f-m;
+		font-size: 64px;
+		line-height: 1;
+		margin: 0;
+		color: #fff;
+	}
+
+	.breadcrumbs {
+		@include f-r;
+		font-size: 18px;
+        color: #fff;
+        margin-top: 10px;
+        text-align: right;
+        padding-right: 120px;
+	}
+
+    @media only screen and (max-width : 1870px) {
+        .breadcrumbs {
+            text-align: center;
+            padding-right: 0;
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        padding-bottom: 30px;
+        padding-top: 70px;
+        .title {
+            font-size: 55px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        padding-bottom: 25px;
+        padding-top: 50px;
+        .title {
+            font-size: 45px;
+        }
+    }
+
+}
+/* --------------------- /Section top-inner ---------------------- */
+
+
+/* ---------------------- Section about ---------------------- */
+section.about {
+    .part-content {
+        padding-left: 120px;
+    }
+
+    .big-square {
+        position: absolute;
+        bottom: 0;
+        left: 45px;
+        max-width: 380px;
+    }
+
+    @media only screen and (max-width : $lw) {
+        .part-content {
+            padding-left: 40px;
+        }
+        .half-bg {
+            .parts-bg {
+                .part-bg {
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+        .big-square {
+            max-width: 280px;
+        }
+    }
+}
+/* --------------------- /Section about ---------------------- */
+
+/* ---------------------- Section advantages ---------------------- */
+section.advantages {
+    padding-bottom: 0;
+    padding-top: 0;
+    .part-content {
+        padding-top: 55px;
+        padding-bottom: 100px;
+        .content {
+            padding-left: 120px;
+        }
+    }
+
+    .tabs {
+        margin-top: 50px;
+    }
+
+    .button {
+        display: flex;
+        margin-top: 50px;
+        cursor: pointer;
+        .text {
+            @include f-b;
+            font-size: 18px;
+            color: #fff;
+            background: var(--main-light-color);
+            @include flex-center;
+            padding: 25px 35px;
+        }
+        .icon {
+            background: var(--main-dark-color);
+            @include flex-center;
+            padding: 25px;
+        }
+    }
+
+
+    @media only screen and (max-width : $lw) {
+        .half-bg {
+            .parts-bg {
+                .part-bg {
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .part-content {
+            padding-bottom: 100px;
+            .content {
+                padding-left: 0px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .part-content {
+            padding-bottom: 0px;
+            padding-top: 0;
+        }
+
+        .tabs {
+            margin-top: 35px;
+        }
+
+        .button {
+            margin-top: 35px;
+            .text {
+                padding: 20px 30px;
+            }
+            .icon {
+                padding: 20px;
+            }
+        }
+    }
+
+}
+/* --------------------- /Section advantages ---------------------- */
+
+.tabs-menu {
+    .items {
+        display: flex;
+        align-items: center;
+        margin: 0 -10px;
+        .item {
+            @include f-r;
+            font-size: 24px;
+            color: var(--main-dark-color);
+            padding: 0 10px;
+            text-align: center;
+            position: relative;
+            transition: 0.5s;
+            cursor: pointer;
+            &:hover, &.active {
+                color: var(--main-light-color);
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 30px;
+                width: 2px;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background: var(--main-light-color);
+            }
+
+            &:last-child {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &.blog {
+        .items {
+            justify-content: center;
+            .item {
+                padding: 0 15px;
+            }
+        }
+
+        @media only screen and (max-width : $mw) {
+            .items {
+                .item {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .items {
+            .item {
+                font-size: 20px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .items {
+            .item {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/* ---------------------- Section team ---------------------- */
+section.team {
+    background: var(--bg-light-color);
+    .section-title.mobile {
+        display: none;
+    }
+    .parts .part {
+        &:nth-child(1) {
+            width: 60%;
+		}
+		&:nth-child(2) {
+            width: 40%;
+		}
+    }
+    .person {
+        .name {
+            @include f-r;
+            font-size: 32px;
+            color: var(--main-dark-color);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .section-title.mobile {
+            display: block;
+        }
+        .section-title.desktop {
+            display: none;
+        }
+        .parts .part {
+            &:nth-child(1) {
+                width: 100%;
+            }
+            &:nth-child(2) {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .person {
+            .name {
+                font-size: 28px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+/* --------------------- /Section team ---------------------- */
+
+
+.grid-diamond {
+    display: flex;
+    flex-wrap: wrap;
+    transform: rotate(45deg);
+    direction: ltr;
+    .item {
+        background: #fff;
+        width: 19%;
+        padding-bottom: 20%;
+        margin: 0.5%;
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            max-height: 140%;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+            filter: grayscale(100%);
+            transition: 0.5s;
+        }
+        &.empty {
+            visibility: hidden;
+        }
+
+        cursor: pointer;
+        &:hover, &.active {
+            img {
+                filter: grayscale(0%);
+            }
+        }
+    }
+}
+
+
+/* ---------------------- Section insurance ---------------------- */
+section.insurance {
+    padding: 0;
+    .part-content {
+        padding-left: 120px;
+        padding-top: 90px;
+        padding-bottom: 120px;
+    }
+
+    @media only screen and (max-width : $lw) {
+        .part-content {
+            padding-left: 80px;
+            padding-top: 70px;
+            padding-bottom: 80px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .part-content {
+            padding-left: 45px;
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+    }
+}
+/* --------------------- /Section insurance ---------------------- */
+
+/* ---------------------- Section insurance-services ---------------------- */
+section.insurance-services {
+    background: var(--main-light-color);
+
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0;
+        margin: -90px;
+        .box {
+            width: 33.33%;
+            margin: 0;
+            padding: 90px;
+            display: block;
+            position: relative;
+            border-left: 1px solid rgba(255,255,255,0.5);
+            &:nth-child(3n) {
+                border-left: none;
+            }
+            .inner {
+                position: relative;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .icon {
+                height: 60px;
+                img {
+                    max-height: 100%;
+                }
+            }
+
+            .text {
+                position: relative;
+                padding-bottom: 95px;
+                flex-grow: 1;
+                .title {
+                    @include f-sb;
+                    font-size: 24px;
+                    color: #fff;
+                    margin-top: 20px;
+                }
+
+                .button-white {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $lw) {
+        .boxes {
+            margin: -70px;
+            .box {
+                padding: 70px;
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            flex-wrap: wrap;
+            margin: -30px;
+            .box {
+                width: 100%;
+                padding: 30px;
+            }
+        }
+    }
+
+}
+/* --------------------- /Section insurance-services ---------------------- */
+
+/* ---------------------- Section questions ---------------------- */
+section.questions {
+    padding: 0;
+    .part-empty {
+        background: var(--bg-light-color);
+    }
+
+    .part-content {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .questions {
+        margin-top: 65px;
+    }
+
+    @media only screen and (max-width : $mw) {
+        .part-content {
+            padding-top: 15px;
+            padding-bottom: 35px;
+        }
+        .questions {
+            margin-top: 35px;
+        }
+    }
+}
+/* --------------------- /Section questions ---------------------- */
+
+.questions {
+    .tabs {
+        .tab {
+            margin-top: 20px;
+            padding-right: 35px;
+            .tab-title {
+                @include f-sb;
+                font-size: 24px;
+                color: var(--main-dark-color);
+                position: relative;
+                cursor: pointer;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    height: 20px;
+                    width: 20px;
+                    right: -35px;
+                    top: 5px;
+                    background: url("../images/icons/arrow-left-green.svg") no-repeat center;
+                    transition: transform 0.5s;
+                }
+            }
+            .tab-content {
+                display: none;
+            }
+            &.active {
+                .tab-content {
+                    //display: block;
+                }
+                .tab-title {
+                    &:after {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .tabs {
+            .tab {
+                .tab-title {
+                    font-size: 20px;
+                    &:after {
+                        top: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ---------------------- Section blog ---------------------- */
+section.blog {
+    .tabs-menu {
+        margin-top: 35px;
+    }
+    &.more {
+        background: var(--bg-light-color);
+    }
+    .boxes {
+		display: flex;
+		flex-wrap: wrap;
+		font-size: 0;
+		margin: -30px;
+		margin-top: 25px;
+		clear: both;
+		overflow: auto;
+		.box {
+			width: 33.33%;
+			margin: 0;
+			padding: 30px;
+		}
+	}
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            justify-content: center;
+            .box {
+                width: 100%;
+                max-width: 400px;
+                .image {
+                    height: 220px;
+                }
+            }
+        }
+    }
+}
+
+/* --------------------- /Section blog ---------------------- */
+
+/* ---------------------- Section post ---------------------- */
+section.post {
+    &.ltr {
+        direction: ltr;
+        * {
+            direction: ltr;
+        }
+    }
+
+    .video {
+        position: relative;
+        font-size: 0;
+        text-align: center;
+        img {
+            max-width: 100%;
+            margin: auto;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(47, 35, 40, 0.64);
+        }
+    }
+
+	.img-main {
+		width: 50%;
+		float: left;
+		margin-right: 50px;
+		margin-bottom: 50px;
+		
+		&.mobile {
+			display: none;
+		}
+		img {
+			width: 100%;
+			margin-top: 0;
+		}
+	}
+
+	.content {
+		.section-title {
+			margin-top: 0;
+			p {
+				margin-top: 0;
+			}
+		}
+        p.from {
+            margin-top: 0;
+        }
+	}
+
+
+
+	@media only screen and (max-width : $mw) { 
+
+		.img-main {
+			float: none;
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 0;
+			margin-top: 20px;
+			display: none;
+			&.mobile {
+				display: block;
+			}
+		}
+	}
+}
+/* --------------------- /Section post ---------------------- */
+
+/* ---------------------- Section jobs ---------------------- */
+section.jobs {
+    padding: 0;
+    .part-content {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+
+    .jobs {
+        margin-top: 35px;
+    }
+
+    @media only screen and (max-width : $mw) {
+        .part-content {
+            padding-top: 35px;
+            padding-bottom: 35px;
+        }
+    }
+}
+/* --------------------- /Section jobs ---------------------- */
+
+
+.jobs {
+    .tabs {
+        .tab {
+            margin-top: 15px; 
+            .tab-title {
+                @include f-sb;
+                font-size: 24px;
+                color: #fff;
+                background: var(--main-light-color);
+                position: relative;
+                cursor: pointer;
+                padding: 10px;
+                padding-left: 35px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    height: 20px;
+                    width: 20px;
+                    left: 10px;
+                    top: 14px;
+                    background: url("../images/icons/arrow-left-green.svg") no-repeat center;
+                    transition: transform 0.5s;
+                    filter: brightness(0) invert(1);
+                }
+            }
+            .tab-content {
+                display: none;
+                padding: 10px 20px;
+                .content {
+
+                }
+            }
+            &.active {
+                .tab-content {
+                    //display: block;
+                }
+                .tab-title {
+                    &:after {
+                        transform: rotate(-90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .wpcf7 {
+        form {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .wpcf7-form-control-wrap {
+            padding: 15px 0px;
+            width: 100%;
+        }
+        input[type="file"] {
+            border: none;
+            padding: 0;
+        }
+
+        .wrapper-file {
+            text-align: right;
+            @include f-b;
+            font-size: 18px;
+            color: var(--main-dark-color);
+            padding: 15px 0px;
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .tabs {
+            .tab {
+                .tab-title {
+                    font-size: 20px;
+                    &:after {
+                        top: 11px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ---------------------- Section contact ---------------------- */
+section.contact {
+    padding: 0;
+    .half-bg {
+        .parts {
+            margin: 0 -125px;
+            .part {
+                padding: 0 125px;
+            }
+            .part-content {
+                padding-top: 95px;
+                padding-bottom: 95px;
+            }
+
+            .part-bg {
+                .square {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 3;
+                    background: var(--main-dark-color);
+                    padding: 100px 55px;
+                    
+                    img {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    
+    .wpcf7 {
+        form {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .wpcf7-form-control-wrap {
+            padding: 15px 0px;
+            width: 100%;
+            &.acceptance-980 {
+                width: auto;
+                input {
+                    width: auto;
+                }
+            }
+        }
+        .wrapper-submit {
+            margin-top: 25px;
+        }
+
+    }
+
+    .contacts {
+        margin-top: 95px;    
+    }
+
+    @media only screen and (max-width : $lw) {
+        .half-bg {
+            .parts-bg {
+                .part-bg {
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                    .square {
+                        padding: 50px 35px;
+                        img {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .half-bg {
+            .parts {
+                .part-content {
+                    padding-top: 15px;
+                    padding-bottom: 35px;
+                }
+            }
+            .parts-bg {
+                .part-bg {
+                    .square {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .contacts {
+            margin-top: 55px;    
+        }
+    }
+}
+/* --------------------- /Section contact ---------------------- */
+
+/* ---------------------- Section agencies ---------------------- */
+section.agencies {
+    .tabs-menu {
+        margin-top: 35px;
+    }
+
+    .boxes {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 0;
+        margin: -25px;
+        margin-top: 75px;
+        .box {
+            width: 50%;
+            margin: 0;
+            padding: 25px;
+            display: block;
+            position: relative;
+            .inner {
+                position: relative;
+                background: var(--bg-light-color);
+                padding: 70px;
+                height: 100%;
+            }
+
+            .logo {
+                height: 100px;
+                img {
+                    max-height: 100%;
+                }
+            }
+
+            .text {
+                margin-top: 40px;
+                .title {
+                    @include f-r;
+                    font-size: 32px;
+                    color: var(--main-dark-color);
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width : $mw) {
+        .boxes {
+            margin: -20px;
+            margin-top: 35px;
+            .box {
+                padding: 20px;
+                width: 100%;
+                .inner {
+                    padding: 20px;
+                }
+    
+                .logo {
+                    height: 70px;
+                }
+    
+                .text {
+                    margin-top: 25px;
+                    .title {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* --------------------- /Section agencies ---------------------- */

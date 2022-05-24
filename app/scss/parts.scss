@@ -1,0 +1,389 @@
+#fp-nav {
+	ul {
+		li {
+			margin: 20px 10px;
+			height: 8px;
+			width: 8px;
+			a {
+				span {
+					height: 8px !important;
+					width: 8px !important;
+					margin: 0px !important;
+					display: inline-block;
+					background: #fff;
+					&:before {
+						content: "";
+						position: absolute;
+						display: block;
+						height: 8px;
+						width: 8px;
+						border: 1px solid #fff;
+						border-radius: 100%;
+						top: 50%;
+						left: 50%;
+						transform: translateX(-50%) translateY(-50%);
+						transition: 0.5s;
+						opacity: 0;
+					}	
+				}
+				&.active {
+					span {
+						&:before {
+							height: 22px;
+							width: 22px;
+							opacity: 1;
+						}
+					}
+				}
+			
+			}
+		}
+	}
+}
+
+body.fp-viewing-services, body.fp-viewing-blog, body.fp-viewing-contact {
+	#fp-nav {
+		ul {
+			li {
+				a {
+					span {
+						background: #868686;
+						&:before {
+							border: 1px solid #868686;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+	position: relative;
+	padding: 75px 0;
+	@media only screen and (max-width : $tw) {
+		padding: 55px 0;
+	}
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+	}
+}
+
+.section-inner {
+	max-width: 1640px;
+	padding: 0 20px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+
+	@media only screen and (max-width : $mw) {
+		padding: 0 10px;
+	}
+}
+
+.content {
+	@include f-r;
+	font-size: 18px;
+	color: var(--text-color);
+	&.white {
+		color: #fff;
+	}
+	line-height: 1.4;
+	p,ul,li,h1,h2,h3,h4,h5,img {
+		margin-top: 15px;
+	}
+	h1,h2,h3,h4,h5 {
+		color: var(--main-light-color);
+	}
+
+	ul {
+		list-style: disc;
+    	padding-right: 25px;
+	}
+	img {
+		max-width: 100%;
+	}
+
+	@media only screen and (max-width : $lw) {
+		font-size: 17px;
+	}
+}
+
+.button-read-more {
+	display: inline-block;
+	margin-top: 35px;
+	@include f-b;
+	font-size: 18px;
+	color: var(--main-dark-color);
+	transition: color 0.5s;
+	i {
+		font-size: 22px;
+		color: var(--main-light-color);
+		margin-right: 3px;
+		position: relative;
+		left: 0;
+		transition: left 0.5s;
+	}
+	span,i {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	cursor: pointer;
+	&:hover {
+		color: var(--main-light-color);
+		i {
+			left: -5px;
+		}
+	}
+}
+
+.button-regular {
+	text-align: center;
+	@include f-sb;
+	font-size: 18px;
+	color: #fff;
+	background: var(--main-dark-color);
+	border-radius: 200px;
+	padding: 20px 40px;
+	cursor: pointer;
+	transition: background 0.5s;
+	display: inline-block;
+	margin-top: 35px;
+	&:hover {
+		background: var(--main-light-color);
+	}
+
+	@media only screen and (max-width : $lw) {
+		font-size: 17px;
+		padding: 15px 30px;
+	}
+}
+
+.button-white {
+	@include f-b;
+	font-size: 15px;
+	color: var(--main-dark-color);
+	background: #FFFFFF;
+	border-radius: 30px;	
+	display: inline-block;
+	margin-top: 35px;
+	padding: 20px 35px;
+}
+
+.centered {
+	text-align: center;
+}
+
+.parts {
+	display: flex;
+	margin: 0 -45px;
+	&.ai-center {
+		align-items: center;
+	}
+	.part {
+		width: 50%;
+		padding: 0 45px;
+		position: relative;
+		&:nth-child(1) {
+		}
+		&:nth-child(2) {
+		}
+		.image {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		flex-wrap: wrap;
+		.part {
+			width: 100%;
+			&:nth-child(2) {
+				margin-top: 25px;
+			}
+		}
+	}
+}
+
+.half-bg {
+	position: relative;
+	.parts-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		.part-bg {
+			padding: 0;
+			@include flex-center;
+			overflow: hidden;
+			img {
+				width: 100%;
+			}
+		}
+		.part-empty {
+			padding: 0;
+		}
+	}
+
+	.parts-content {
+		.part-bg {
+			img {
+				display: none;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.parts-bg {
+			display: none;
+		}
+		.parts-content {
+			.part-bg {
+				img {
+					display: block;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+.section-title {
+	@include f-r;
+	font-size: 64px;
+	color: var(--main-dark-color);
+	&.white {
+		color: #fff;
+	}
+
+	@media only screen and (max-width : $lw) {
+		font-size: 50px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 40px;
+	}
+}
+
+.inner-title {
+	@include f-sb;
+	font-size: 32px;
+	color: var(--main-dark-color);
+	&.white {
+		color: #fff;
+	}
+}
+
+.section-subtitle {
+	@include f-r;
+	font-size: 18px;
+	color: var(--text-color);
+	text-align: center;
+	margin-top: 10px;
+	@media only screen and (max-width : $tw) {
+		font-size: 18px;
+	}
+	@media only screen and (max-width : $mw) {
+		font-size: 16px;
+	}
+}
+
+
+.loading:after {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    content: "\f1ce";
+    animation: fa-spin .75s linear infinite;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    color: #227BC9;
+    z-index: 2;
+}
+
+#sm_menu_ham {
+	float: left;
+	left: auto;
+	top: 11px;
+	left: 7px;
+	right: auto;
+	span {
+		background-color: var(--main-light-color);
+		height: 3px;
+	}
+}
+
+.sm_menu_outer {
+	.mobile-menu-bottom {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		padding: 20px;
+		.content {
+			@include f-r;
+			font-size: 15px;
+			color: #fff;
+			margin-top: 20px;
+			p {
+				margin-top: 10px;
+			}
+		}
+		
+	}
+}
+.sm_menu_outer {
+	background: var(--main-dark-color);
+	&.slide .mobile_menu .sub-menu {
+		background: var(--main-dark-color);
+		height: 800px;
+	}
+	.mobile_menu {
+		li {
+			border-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%) 0 0 1 0;
+		}
+		li.hasChild > a, li.back a {
+			background-size: 20px !important;
+		}
+		a {
+			@include f-r;
+			 padding: 15px 15px;
+		}
+		.current_page_item {
+			>a {
+				@include f-b;
+			}
+		}
+	}
+}
+
+.sm_menu_outer.slide .mobile_menu li.hasChild > a {
+    background: url(../plugins/mmenu/images/next.png) no-repeat scroll 10px center / 5% auto;
+}
+
+.sm_menu_outer .mobile_menu li.back a {
+    padding: 20px 45px 20px 5px;
+    background: url(../plugins/mmenu/images/back.png) no-repeat scroll right 15px center / 5% auto;
+}
+
+.sm_menu_outer {
+    bottom: 0;
+    height: auto;
+    top: 45px;
+}
